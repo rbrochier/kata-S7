@@ -62,6 +62,7 @@ function afficherPlantes(liste) {
 const ul = document.getElementById("liste");
 ul.innerHTML = "";
 
+
 liste.forEach(plante => {
   const li =document.createElement("li")
   li.textContent = plante.emoji+" "+plante.nom
@@ -131,6 +132,21 @@ function activerBouton (boutonClique) {
 // =====================================================
 // Questions de recul (réponds en commentaire ici)
 // 1.
+/// On pourrait tester avec Jest les TODO 1 & 2 car elles retournent des données mais ne produisent rien visuellement.
+/// On ne pourrait pas tester les autres TODO car ce sont des fonctions qui modifient la page mais ne retournent pas de données.
+
+
+
 // 2.
+/// ça créé dès le depart 3 listes (toutes, interieur, exterieur), 
+// puis à chaque clique cela créé à nouveaux des listes sans jamais remettre à zero , ce n'est effectivement pas gérable.
+
+
+
+
 // 3.
-// =====================================================
+/// A priori il n'est pas capables de lire plantes.js du tout si il est placé après script.js
+/// Il doit avoir besoin de lire la variable plantes avant d'executer correctement script.js 
+///Uncaught ReferenceError: plantes is not defined
+/// at script.js:25:29
+/// le premier appel de la variable plantes bloque tout le reste de l'execution.
