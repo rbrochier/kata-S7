@@ -55,9 +55,29 @@ console.log(filtrerParLieu(plantes, "intérieur"))
 // 3. Si la plante est à arroser, ajoute au <li> la classe "a-arroser"
 // 4. Mets à jour <p id="compteur"> : « 4 plantes à arroser sur 8 »
 //    (utilise compterAArroser, ne recompte pas ici)
-function afficherPlantes(liste) {
 
+
+
+function afficherPlantes(liste) {
+const ul = document.getElementById("liste");
+ul.innerHTML = "";
+
+liste.forEach(plante => {
+  const li =document.createElement("li")
+  li.textContent = plante.emoji+" "+plante.nom
+  ul.appendChild(li);
+
+  if (plante.aArroser === true){
+    li.classList.add ("a-arroser")
+  }
+    
+});
+    const p = document.getElementById("compteur");
+    p.textContent = compterAArroser(liste) + " plantes à arroser sur " + liste.length
 }
+
+console.log(afficherPlantes(plantes));
+
 
 
 // TODO 4 — Au chargement de la page, affiche toutes les plantes.
