@@ -18,10 +18,22 @@ function compterAArroser(liste) {
       compteur = compteur + 1;
       
     }
+   
   }
   return compteur;
-
 };
+
+function filtrerAArroser(liste) {
+  let tableau =[];
+  for (let i = 0; i < liste.length; i++){
+    if (liste[i].aArroser === true) {
+    tableau.push(liste[i]);
+  }
+}
+return tableau
+
+}
+
 console.log(compterAArroser(plantes))
 // Vérifie dans la console avant de passer à la suite :
 // console.log(compterAArroser(plantes)) // doit afficher 4
@@ -114,6 +126,14 @@ boutonExterieur.addEventListener("click",() => {
   activerBouton(boutonExterieur);
 })
 
+const boutonAArroser = document.getElementById("btn-arroser");
+boutonAArroser.addEventListener("click",() =>{
+  afficherPlantes(filtrerAArroser(plantes));
+  activerBouton(boutonAArroser);
+
+
+})
+
 
 // TODO 6 — Le bouton actif
 // Le bouton cliqué prend la classe "actif", les deux autres la perdent.
@@ -121,6 +141,7 @@ function activerBouton (boutonClique) {
  boutonToutes.classList.remove("actif");
  boutonExterieur.classList.remove("actif");
  boutonInterieur.classList.remove("actif");
+ boutonAArroser.classList.remove("actif");
 
  boutonClique.classList.add("actif")
 

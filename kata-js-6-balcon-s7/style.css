@@ -29,6 +29,7 @@ main {
 
 nav {
   display: flex;
+  flex-wrap: nowrap;
   gap: 8px;
   margin-bottom: 16px;
 }
@@ -41,6 +42,7 @@ nav {
   color: #4a6b3a;
   font: inherit;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .filtre.actif {
