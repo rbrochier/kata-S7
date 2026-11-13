@@ -82,6 +82,7 @@ console.log(afficherPlantes(plantes));
 
 // TODO 4 — Au chargement de la page, affiche toutes les plantes.
 
+afficherPlantes(plantes);
 
 
 // ---------- PARTIE 3 : les clics ----------
@@ -93,10 +94,37 @@ console.log(afficherPlantes(plantes));
 // Au clic sur « Toutes » : toutes les plantes.
 // Les gestionnaires sont des fonctions fléchées : () => { ... }
 
+const boutonToutes = document.getElementById("btn-toutes");
+boutonToutes.addEventListener("click", () => {
+  afficherPlantes(plantes);
+  activerBouton(boutonToutes);
+})
+
+const boutonInterieur = document.getElementById("btn-interieur");
+boutonInterieur.addEventListener("click",() => {
+  afficherPlantes(filtrerParLieu(plantes, "intérieur"))
+  activerBouton(boutonInterieur);
+
+})
+
+const boutonExterieur = document.getElementById("btn-exterieur");
+boutonExterieur.addEventListener("click",() => {
+  afficherPlantes(filtrerParLieu(plantes, "extérieur"))
+  activerBouton(boutonExterieur);
+})
 
 
 // TODO 6 — Le bouton actif
 // Le bouton cliqué prend la classe "actif", les deux autres la perdent.
+function activerBouton (boutonClique) {
+ boutonToutes.classList.remove("actif");
+ boutonExterieur.classList.remove("actif");
+ boutonInterieur.classList.remove("actif");
+
+ boutonClique.classList.add("actif")
+
+
+}
 
 
 
