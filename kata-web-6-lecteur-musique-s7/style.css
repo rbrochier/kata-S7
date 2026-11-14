@@ -151,6 +151,8 @@ h2 {
   flex-grow: 1;
 }
 
+
+
 .boutons {
   display: flex;
   gap: 6px;
@@ -181,12 +183,10 @@ h2 {
   }
 }
 
-/* ---------- TODO 2 — L'en-tête ---------- */
 
-/* ---------- TODO 3 — Le morceau en cours ---------- */
-
-/* ---------- TODO 4 — Une piste de la playlist ---------- */
-
-/* ---------- TODO 5 — La barre de contrôle ---------- */
-
-/* ---------- TODO 6 — Grand écran (768px et plus) ---------- */
+/* QUESTIONS DE RECUL */
+/*1. Car Flex-Direction: Column fait inverser les axes.
+/*2. Si on retire le flex-grow de la barre elle se retrecit et ne prend pas toute la largueur.
+/*   Si on le met sur les deux temps, le premier se met tout à gauche et le second reste collé à la fin de la barre.
+/*3. Pour d'abord centrer et organiser tous les élements en colonne. Pour egalement gerer la barre de progression et les boutons
+de controle qui eux ne bougeront pas. Il n'y a que la pochette et la playlist qui vont permuter une fois passé sur un ecran plus grand.
